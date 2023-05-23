@@ -5,7 +5,7 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
   datasource:
-    url: postgresql://postgres:oQeneb1ly2w8sTAjE0OC@containers-us-west-94.railway.app:7158/railway
+    url: jdbc:postgresql://containers-us-west-94.railway.app:7158/railway
     username: postgres
     password: oQeneb1ly2w8sTAjE0OC
     driver-class-name: org.postgresql.Driver
