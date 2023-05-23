@@ -16,3 +16,4 @@ spring:
       ddl-auto: create
   liquibase:
     change-log: static/db/changelog/changelog-master.yml
+    enabled: false
