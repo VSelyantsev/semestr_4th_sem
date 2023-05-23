@@ -1,0 +1,95 @@
+
+body {
+	background-image: linear-gradient(to right top, #6c6ce8, #5e6be9, #4e69ea, #3968ea, #1267eb);
+	margin: auto;
+	width: 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+     font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+	margin-top: 30px;
+	background-color: #ffffff;
+	border: 1px ;
+	border-radius: 20px;
+	width: 600px;
+	height: 500px;
+}
+
+.main .wrapper {
+	justify-content: center;
+}
+
+.wrapper .up-wrapper {
+	text-align: center;
+	height: 150px;
+	width: 600px;
+}
+
+.wrapper .up-wrapper .app-image {
+	height: 200px;
+	width: 250px;
+}
+
+
+.wrapper .down-wrapper {
+	height: 250px;
+	width: 600px;
+	text-align: center;
+}
+
+.down-wrapper .wrapper-data .data input {
+	margin-top: 10px;
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-bottom: 1px solid black;
+}
+
+.down-wrapper .wrapper-data .data input:focus {
+	outline: none;
+}
+
+.down-wrapper .wrapper-data .data::after {
+  content: "*";
+  color: red;
+}
+
+.down-wrapper .register-button button {
+	width: 213px;
+	height: 40px;
+	font-size: 15px;
+	color: black;
+	border: none;
+	border-radius: 40px;
+}
+
+.down-wrapper .register-button button:hover {
+	background-color: lightgray;
+}
+
+.wrapper .wrapper-sign-up .sign-in {
+	text-align: center;
+}
+
+.wrapper .wrapper-sign-up .sign-in button {
+	border: none;
+	border-radius: 40px;
+	height: 40px;
+	width: 213px;
+	font-size: 12px;
+}
+
+.wrapper .wrapper-sign-up .sign-in button:hover {
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.wrapper .wrapper-sign-up .sign-in a {
+	color: black;
+	text-decoration: none;
+}
+
+

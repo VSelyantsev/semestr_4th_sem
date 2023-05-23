@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="/css/login-style.css">
+</head>
+<body>
+	<div class="main">
+		<div class="wrapper">
+			<div class="up-wrapper">
+				<div class="main-image">
+					<img class="app-image" src="/images/login2.jpg" alt="Error loading image">
+				</div>
+			</div>
+			<div class="down-wrapper">
+				<form method="post" id="formJs" th:action="@{/proceed}" th:object="${userRequest}">
+					<h2 class="greeting">Login</h2>
+					<div class="wrapper-data">
+						<div class="data">
+							<input type="text" name="email" th:field="*{email}" id="email" th:value="${userRequest.email}" placeholder="Email">
+						</div>
+						<div class="data">
+							<input type="password" name="password" id="password" th:field="*{password}" th:value="${userRequest.password}" placeholder="Password">
+						</div>
+					</div>
+					<br>
+					<div class="login-button">
+						<button type="submit">Login</button>
+					</div>
+				</form>
+			</div>
+			<div class="wrapper-sign-up">
+				<div class="sign-up">
+					<button>
+						<a class="registration" href="/registration">
+							Not have account yet? Sign up!
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

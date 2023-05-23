@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <link rel="stylesheet" th:href="@{/css/read-blog-style.css}">
+    <title>Home page</title>
+</head>
+<body>
+<div th:insert="~{navbar :: navbar}"> </div>
+<div class="if-null" th:if="${blogs != null and blogs.isEmpty()}">
+    <h2>Subscribe to someone for read their blogs</h2>
+</div>
+<div class="wrapper-main">
+    <div class="read-blog" th:each="blog: ${blogs}">
+        <span class="user" th:text="${blog.user.username} + ' said:'"></span> <br>
+        <span class="title" th:text="${blog.title}"></span>
+        <br>
+        <span class="content" th:text="${blog.content}"></span>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <title>Left navbar</title>
+</head>
+<body>
+    <div th:fragment="navbar">
+        <div class="wrapper-up">
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/house.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/dashboard">Home page</a></h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/profile.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/profile">Profile</a></h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/friends.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/subscription">Subscriptions</a></h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/to-do-list.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/tasks">Tasks</a></h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/blogging.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/blog">Blog</a></h2>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/read_blog.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/readBlog">Read Blog</a></h2>
+                </div>
+            </div>
+<!--            <div class="wrapper">-->
+<!--                <div class="image">-->
+<!--                    <img src="/images/user-interface.png" alt="Error loading image">-->
+<!--                </div>-->
+<!--                <div class="name">-->
+<!--                    <h2><a href="/login">Sign in</a></h2>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="wrapper">
+                <div class="image">
+                    <img src="/images/logout.png" alt="Error loading image">
+                </div>
+                <div class="name">
+                    <h2><a href="/logout">Exit</a></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

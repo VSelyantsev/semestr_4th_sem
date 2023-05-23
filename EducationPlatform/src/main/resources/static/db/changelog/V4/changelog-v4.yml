@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: '4'
+      author: 'Selyantsev Vladislav'
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            splitStatements: true
+            stripComments: true
+            path: DDL/2023-05-21-added-table-blog.sql
+            relativeToChangelogFile: true

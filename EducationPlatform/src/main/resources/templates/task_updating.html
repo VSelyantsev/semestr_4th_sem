@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <meta charset="utf-8">
+    <title>Home page</title>
+    <!--add styles-->
+</head>
+<body>
+<div th:insert="~{navbar :: navbar}"> </div>
+    <div class="wrapper">
+        <div class="deleteTask">
+            <details>
+                <summary>Delete Task</summary>
+                        <form method="POST" th:action="@{/api/task/delete}" th:object="${taskRequest}">
+                            <input type="text" name="titleToDelete" th:field="*{title}" th:value="${taskRequest.title}" placeholder="Enter the task name">
+                            <button type="submit">Delete</button>
+                        </form>
+            </details>
+        </div>
+        <div class="updateTask">
+            <details>
+                <summary>Update task</summary>
+                <form method="POST" th:action="@{/api/task/update}" th:object="${taskRequest}">
+                    <input type="text" th:field="*{title}" th:value="${taskRequest.title}" placeholder="Title">
+                    <br>
+                    <input type="text" th:field="*{description}" th:value="${taskRequest.description}" placeholder="Description">
+                    <br>
+                    <input type="date" th:field="*{expirationDate}" th:value="${taskRequest.expirationDate}" placeholder="Expiration Date">
+                    <br>
+                    <button type="submit">Update Task</button>
+                </form>
+            </details>
+        </div>
+    </div>
+</body>
+</html>

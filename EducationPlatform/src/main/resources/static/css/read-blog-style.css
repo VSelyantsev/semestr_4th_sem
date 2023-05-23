@@ -1,0 +1,26 @@
+.wrapper-main .read-blog {
+    background-color: #03BFCB;
+    text-align: center;
+    justify-content: center;
+    margin-left: 200px;
+    border-radius: 20%;
+    width: 200px;
+    height: 100px;
+}
+
+.wrapper-main .read-blog .user {
+    font-size: 24px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper-main .read-blog .title {
+    font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper-main .read-blog .content {
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+}
+
+

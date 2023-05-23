@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: '2'
+      author: 'Selyantsev Vladislav'
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            splitStatements: true
+            stripComments: true
+            path: DDL/2023-05-15-added-constraints.sql
+            relativeToChangelogFile: true

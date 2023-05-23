@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <link rel="stylesheet" th:href="@{/css/dashboard-style.css}">
+    <title>Home page</title>
+</head>
+<body>
+<div th:insert="~{navbar :: navbar}"> </div>
+<div class="wrapper-main">
+    <div class="main-table-wrapper">
+        <table>
+            <caption class="caption">
+                <h2>Tasks</h2>
+            </caption>
+            <thead>
+            <tr>
+                <th scope="col"> Title </th>
+                <th scope="col"> Description </th>
+                <th scope="col"> Status </th>
+                <th scope="col"> Expiration date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${tasks != null and tasks.isEmpty()}">
+                <td colspan="2"> No tasks Available </td>
+            </tr>
+            <div class="table-wrapper">
+                <tr th:each="task : ${tasks}">
+                    <td><span th:text="${task.title}"> Title </span></td>
+                    <td><span th:text="${task.description}"> Description </span></td>
+                    <td><span th:text="${task.executionStatus}"> Status </span></td>
+                    <td><span th:text="${task.expirationDate}"> Expire date </span></td>
+                </tr>
+            </div>
+            </tbody>
+        </table>
+    </div>
+    <div class="button">
+        <button class="editTask" type="submit">
+            <a href="/update">Edit your table</a>
+        </button>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <title>Home page</title>
+</head>
+<body>
+<div th:insert="~{navbar :: navbar}"> </div>
+<div class="wrapper-main">
+    <div class="add-friend">
+        <form method="post" th:action="@{/api/follower/addFollower}" th:object="${follower}">
+            <label for="friendUsername">Enter person username</label>
+            <input type="text" id="friendUsername" th:field="*{username}">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <div class="friend-requests">
+        <ul>
+            <li th:each="request : ${followerRequests}">
+                <button id="sendButton" th:text="${request.user.username} + ' sends a subscription request. Accept?'" type="submit"></button>
+            </li>
+            <li th:if="${followerRequests != null and followerRequests.isEmpty()}">List of followers request is Empty</li>
+        </ul>
+    </div>
+    <script th:inline="javascript">
+        const button = document.getElementById('sendButton');
+
+        button.addEventListener('click', function() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', '/api/follower/requests', true);
+
+            // Обработчик события загрузки запроса
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    button.innerHTML = 'Request was accepted &#10004';
+                    button.disabled = true;
+                } else {
+                    console.error('Произошла ошибка при выполнении запроса.');
+                }
+            };
+
+            xhr.send();
+        });
+    </script>
+
+    <div class="remove-follower">
+        <form method="post" th:action="@{/api/follower/remove}" th:object="${markedFollower}">
+            <label for="deleteFollower">Enter the username person, which you want to delete</label>
+            <input type="text" id="deleteFollower" th:field="*{username}" placeholder="Enter username">
+            <button type="submit">Delete follower</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

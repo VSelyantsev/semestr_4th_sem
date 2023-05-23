@@ -1,0 +1,22 @@
+GET  http://localhost:8080/registration
+
+###
+GET http://localhost:8080/login
+
+###
+POST http://localhost:8080/api/user/create
+Content-Type: application/x-www-form-urlencoded
+
+email=selyantsev.vladislav77@mail.ru&password=kitkat7531
+
+###
+POST http://localhost:8080/proceed
+Content-Type: application/x-www-form-urlencoded
+
+email=admin@mail.ru&password=admin
+
+###
+GET http://localhost:8080/api/admin/all
+
+###
+GET http://localhost:8080/api/admin/history/selyantsev.vladislav775@mail.ru

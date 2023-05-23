@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/css/navbar-style.css}">
+    <link rel="stylesheet" th:href="@{/css/blog-style.css}">
+    <title>Home page</title>
+</head>
+<body class="">
+<div th:insert="~{navbar :: navbar}"> </div>
+<div class="main-body-wrapper">
+    <div class="create-blog">
+        <details class="blog-wrapper">
+            <summary class="summary">Create blog</summary>
+            <form method="post" th:action="@{/api/blog/create}" th:object="${blog}">
+                <label for="title">Enter title of your blog</label>
+                <br>
+                <input type="text" id="title" th:field="*{title}" placeholder="Enter title">
+                <br>
+                <label for="content">Write something about your subject</label>
+                <br>
+                <textarea id="content" cols="30" rows="10" th:field="*{content}"
+                          placeholder="Enter content"></textarea>
+                <br>
+                <button type="submit">Save blog</button>
+            </form>
+        </details>
+    </div>
+
+    <div class="update-blog">
+        <details class="update-wrapper">
+            <summary class="summary">Want to update blog?</summary>
+            <form method="post" th:action="@{/api/blog/updateBlog}" th:object="${blog}" class="update">
+                <label for="update">Enter title name of blog which you want to update</label>
+                <br>
+                <input type="text" id="update" th:field="*{title}" placeholder="Enter title">
+                <br>
+                <label for="main-content">Enter content</label>
+                <textarea id="main-content" cols="30" rows="10" th:field="*{content}"
+                          placeholder="Enter content"></textarea>
+                <button type="submit">Save changes</button>
+            </form>
+        </details>
+    </div>
+
+    <div class="delete-blog">
+        <details class="delete-wrapper">
+            <summary class="summary">Delete blog</summary>
+            <form method="post" id="delete-form" th:action="@{/api/blog/deleteBlog}" th:object="${blog}">
+                <label for="delete">Enter title blog which you want to delete</label>
+                <input type="text" id="delete" th:field="*{title}" placeholder="Enter title">
+                <button type="submit">Delete blog</button>
+            </form>
+        </details>
+    </div>
+</div>
+
+    <script th:inline="javascript">
+        const form = document.getElementById('delete-form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/api/blog/deleteBlog', true);
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        alert("Blog was deleted")
+                    } else {
+                        console.error('Ошибка при выполнении запроса');
+                    }
+                }
+            };
+
+            xhr.send(formData);
+        });
+    </script>
+</body>
+</html>

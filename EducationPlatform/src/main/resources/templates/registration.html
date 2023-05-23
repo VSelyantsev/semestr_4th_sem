@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Registration</title>
+	<link rel="stylesheet" href="/css/registration-style.css">
+</head>
+<body>
+
+	<div class="main">
+		<div class="wrapper">
+			<div class="up-wrapper">
+				<div class="main-image">
+					<img class="app-image" src="/images/apps4.jpg" alt="Error loading image">
+				</div>
+			</div>
+			<div class="down-wrapper">
+				<form th:method="post" th:action="@{api/user/create}" th:object="${userRequest}">
+					<h2 class="greeting">Registration</h2>
+					<div class="wrapper-data">
+						<div class="data">
+							<input th:type="text" th:name="username" th:field="*{username}" th:value="${userRequest.username}" th:placeholder="Username">
+						</div>
+						<div class="data">
+							<input th:type="text" th:name="email" th:field="*{email}" th:value="${userRequest.email}" th:placeholder="Email">
+						</div>
+						<div class="data">
+							<input th:type="password" th:name="password" th:field="*{password}" th:value="${userRequest.password}" th:placeholder="Password">
+						</div>
+					</div>
+					<br>
+					<div class="register-button">
+						<button type="submit">Create Account</button>
+					</div>
+				</form>
+			</div>
+			<div class="wrapper-sign-up">
+				<div class="sign-in">
+					<button>
+						<a class="login" href="/login">
+							Already have an account? Sign in!
+						</a>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
