@@ -5,9 +5,9 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
   datasource:
-    url: jdbc:postgresql://localhost:5432/taskmanager
+    url: postgresql://postgres:oQeneb1ly2w8sTAjE0OC@containers-us-west-94.railway.app:7158/railway
     username: postgres
-    password: rootroot
+    password: oQeneb1ly2w8sTAjE0OC
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
