@@ -27,7 +27,7 @@ ext {
 tasks.jar {
     enabled = false
     manifest {
-        attributes["Main-Class"] = "com.cantt39t.fitnesswebapp.FitnessWebAppApplication"
+        attributes["Main-Class"] = "ru.itis.kpfu.selyantsev.EducationPlatformApplication"
     }
 }
 
